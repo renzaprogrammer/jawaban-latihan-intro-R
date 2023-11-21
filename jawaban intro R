@@ -583,3 +583,51 @@ for (i in 1:10) {
   }
 }
 
+
+
+#JAWABAN TUGAS MODUL 4
+
+library(rvest)
+library(tidyverse)
+library(dplyr)
+
+#1
+url <- "https://money.kompas.com"
+page <- read_html("https://money.kompas.com")
+
+#2
+links <- read_html("https://money.kompas.com") %>%
+html_elements("terkini__list") %>%
+html_elements("a") %>%
+html_attr("href")
+
+df <- tibble(link = character(), tags = character())
+
+for(link in links){
+  news <- read_html(link)
+  tags <- news %>%
+    html_elements(".tag__article__wrap a") %>%
+    html_text2() %>% paste0(collapse = ",")
+  df <- df %>% add_row(link, tags)
+}
+
+df
+
+#3
+get_news_content(link) 
+content <- news_page %>%
+html_elements(".read__content") %>%
+html_elements("p") %>%
+html_text() %>%  
+paste(collapse = "\n")
+content
+
+#4
+news_data <- data.frame(link = character(), content = character(), stringsAsFactors = FALSE)
+
+for (link in links) {
+  content <- get_news_content(link)
+  news_data <- rbind(news_data, data.frame(link = link, content = content, stringsAsFactors = FALSE))
+}
+
+print(news_data)
