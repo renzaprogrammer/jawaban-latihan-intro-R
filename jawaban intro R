@@ -614,7 +614,7 @@ for(link in links){
 df
 
 #3
-get_news_content(link) 
+get_news_content <- function(link)
 content <- news_page %>%
 html_elements(".read__content") %>%
 html_elements("p") %>%
