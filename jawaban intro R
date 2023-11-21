@@ -1,0 +1,585 @@
+#---VARIABEL----
+
+#basic syntax
+print("hai")
+cat("hai",1)
+
+#Membuat dan mencetak isi variabel
+nama <- "Rizki"
+nama
+
+#Menggabungkan variabel dengan elemen 
+#menggunakan fungsi "paste()"
+text <- "mudah"
+paste("Belajar R sangat", text)
+
+#menggunakan "," untuk 
+#menambahkan variabel ke variabel lain
+text1 <- "R is"
+text2 <- "awesome"
+
+paste(text1, text2)
+
+#menggunakan operator aritmatika "+" 
+#untuk variabel yang berisi angka
+num1 <- 5
+num2 <- 10
+
+num1 + num2
+
+#--Konstanta--
+numeric_integer <- 42L
+numeric_integer
+
+numeric_double <- 3.14
+numeric_double
+
+numeric_complex <- 2 + 3i
+numeric_complex
+
+hexadecimal_constant <- 0x1F
+hexadecimal_constant
+
+
+#--- LATIHAN 1 ---
+# 1. Buatlah variabel "Nama" dan isi dengan nama masing-masing.
+#jawab
+nama <- "rensa"
+nama
+
+# 2. Buatlah variabel "Nomor Sepatu" dan isi dengan nomor sepatu masing-masing
+#jawab
+nomor_sepatu <- "42"
+nomor_sepatu
+
+# 3. Gabungkan teks "Hello" dengan variabel txt, 
+#sehingga menghasilkan output "Hello World!"
+#jawab
+text1 <- "Hello"
+text2 <- "World"
+paste(text1,text2)
+
+# 4. Tampilkan hasil penjumlahan dari 5 + 10, menggunakan dua variabel: x dan y
+#jawab
+x <- 5
+y <- 10
+x + y
+
+# 5. Berikan nilai "Orange" kepada beberapa variabel dalam satu baris:
+#jawab
+#fruit1...fruit2..fruit3.."Orange"
+w <- "Apel"
+x <- "Strawberry"
+y <- "Grape" 
+z <- "Orange"
+paste(w,x,y,z)
+
+#---R MATH----
+
+#Simple math
+10 + 5
+10 - 5
+
+#Built-in Math Functions
+max(5, 10, 15)
+min(5, 10, 15)
+
+#sqrt()
+sqrt(16)
+
+#abs()
+abs(-4.7)
+
+#ceiling() and floor()
+ceiling(1.4)
+floor(1.4)
+
+#---R OPERATORS----
+
+#Operator aritmatika
+10 + 5
+10 - 5
+10 * 5
+10 / 5
+2 ^ 5
+
+
+#Operator Perbandingan
+5 == 3
+5 != 5
+3 > 1
+10 < 6
+5 >= 3
+5 <= 3
+
+# Logical Operators
+
+# AND
+logical_and <- (5 == 5) & (3 > 1)
+logical_and
+
+# OR
+logical_or <- (5 == 3) | (10 < 6)
+logical_or
+
+# NOT
+logical_not <- !(5 == 3)
+logical_not
+
+# XOR
+logical_xor <- xor(5 == 5, 10 < 6)
+logical_xor
+
+
+# --- LATIHAN 2 ---
+#1. Gunakan fungsi yang tepat untuk menemukan 
+# angka terendah dalam (5, 10, 15).
+# jawab
+min(5,10,15)
+
+#2. Gunakan fungsi yang benar untuk menemukan akar kuadrat dari angka 81.
+# jawab
+sqrt(81)
+
+#3. Hitung luas lingkaran dengan diameter 20 dan gunakan konstanta pi
+#jalankan pi untuk melihat nilai pi
+pi
+#jawab
+d <- 20
+hasil <- pi*(d/2)^2
+hasil
+
+#4. Hitunglah akar pangkat tiga dari 14 x 0,51 (hint: menggunakan pangkat)
+#jawab
+hasil <- (14*0.51)^1/3
+hasil
+
+#---TIPE DATA----
+
+# numeric
+x <- 10.5
+class(x)
+
+# integer
+x <- 1000L
+class(x)
+
+# complex
+x <- 9i + 3
+class(x)
+
+# character/string
+x <- "Duren adalah nama buah"
+class(x)
+
+# logical/boolean
+x <- TRUE
+class(x)
+
+
+#---KONVERSI TIPE DATA----
+
+x <- 5L # integer
+y <- 20 # numeric
+
+# convert from integer to numeric:
+a <- as.numeric(x)
+
+# convert from numeric to integer:
+b <- as.integer(y)
+
+# print values of x and y
+x
+y
+
+# print the class name of a and b
+class(a)
+class(b)
+
+y <- 20 # numeric
+b <- as.integer(y)
+class(b)
+
+#---BOOLEANS----
+
+#membandingkan dua nilai
+10 > 9
+10 == 9   
+10 < 9 
+
+
+#membandingkan dua variabel
+a <- 10
+b <- 9
+
+a > b
+
+#----Data Structures----
+
+#vector
+numbers <- c(1, 2, 3)
+numbers
+
+numbers1 <- 1:10
+numbers1
+
+fruits <- c("banana", "apple", "orange")
+length(fruits)
+
+
+fruits1 <- c("banana", "apple", "orange", "mango", "lemon")
+numbers2 <- c(13, 3, 5, 7, 20, 2)
+
+sort(fruits1)  # Sort a string
+sort(numbers2)
+
+# subsetting vectors
+
+## memasukkan nilai "mouse", "rat", "dog", dan "cat"
+## ke dalam variabel animals
+animals <- c("mouse", "rat", "dog", "cat")
+## cek nilai di dalam animals
+animals
+## mengambil elemen kedua dari vektor animals
+animals[2]
+## mengambil elemen ketiga dan kedua
+animals[c(3, 2)]
+## memasukkan vektor ke dalam more_animals
+## dengan mengambil elemen kesatu, kedua, ketiga, kedua, kesatu, dan keempat 
+## dari animals
+more_animals <- animals[c(1, 2, 3, 2, 1, 4)]
+## cek nilai animals
+more_animals
+
+# subsetting vektor berdasarkan kondisi
+
+## memasukkan nilai 21, 34, 39, 54, dan 55
+## ke dalam weight_g
+weight_g <- c(21, 34, 39, 54, 55)
+## ambil elemen pada weight_g dimana indeksnya bernilai TRUE
+weight_g[c(TRUE, FALSE, FALSE, TRUE, TRUE)]
+
+## elemen di weight_g yang nilainya lebih dari 50
+weight_g > 50
+## subset vektor weight_g dengan nilai di atas 50
+weight_g[weight_g > 50]
+
+## filter weight_g dimana weight_g > 30 dan weight_g < 50 dengan operator &
+weight_g[weight_g > 30 & weight_g < 50]
+## filter weight_g dimana weight_g <= 30 atau weight_g == 55 dengan operator |
+weight_g[weight_g <= 30 | weight_g == 55]
+## filter weight_g >= 30 dan weight_g == 21 dengan operator &
+weight_g[weight_g >= 30 & weight_g == 21]
+
+## masukkan nilai "mouse", "rat", "dog", "cat", dan "cat" sebagai vektor
+## ke dalam variabel animals
+animals <- c("mouse", "rat", "dog", "cat", "cat")
+## filter animals dimana animals == "cat" atau animals == "rat"
+animals[animals == "cat" | animals == "rat"]
+## kondisi dengan operator %in% 
+animals %in% c("rat", "cat", "dog", "duck", "goat", "bird", "fish")
+## filter animals dengan operator %in%
+animals[animals %in% c("rat", "cat", "dog", "duck", "goat", "bird", "fish")]
+
+
+# Nilai Hilang
+## masukkan nilai 2,4,4, NA, dan 6 ke dalam vektor heights
+heights <- c(2, 4, 4, NA, 6)
+## cari nilai rata-rata dari heights
+mean(heights)
+## cari nilai maximum dari heights
+max(heights)
+## cari nilai rata-rata dari heights dengan membuang NA terlebih dahulu
+mean(heights, na.rm = TRUE)
+## cari nilai maksimum dari heights dengan membuang NA terlebih dahulu
+max(heights, na.rm = TRUE)
+
+## ekstrak nilai dari heights dimana heights tidak bernilai NA
+heights[!is.na(heights)]
+
+## membuang nilai NA dari heights
+na.omit(heights)
+
+## ekstrak nilai dari heights dimana hanya ambil nilai selain NA
+heights[complete.cases(heights)]
+
+
+#List
+buah <- list("apple", "banana", "cherry")
+buah
+
+buah1 <- list("apple", "banana", "cherry")
+"apple" %in% buah1
+
+buah2 <- list("apple", "banana", "cherry")
+append(buah2, "orange")
+
+my_list <- list(name = "John", age = 30, hobbies = c("reading", "hiking"))
+my_list
+
+#matriks
+matriks1 <- matrix(c(1,2,3,4,5,6), nrow = 3, ncol = 2)
+matriks1
+
+matriks2 <- matrix(c("apple", "banana", "cherry", "orange"), nrow = 2, ncol = 2)
+matriks2
+
+#array
+array <- c(1:24)
+array
+
+multiarray <- array(array, dim = c(4, 3, 2))
+multiarray
+
+#factor
+gender <- factor(c("male", "female", "male", "male", "female"))
+gender
+levels(gender)
+nlevels(gender)
+summary(gender)
+
+
+# -- LATIHAN 3 --
+
+## 1. buatlah vektor heights tanpa nilai NA dari variabel di bawah ini
+heights <- c(63, 69, 60, 65, NA, 68, 61, 70, 61, 59, 64, 69, 63, 63, NA, 72, 65, 64, 70, 63, 65)
+#jawab
+heights[!is.na(heights)]
+
+## 2. carilah nilai median dari nilai heights
+#jawab
+median(heights, na.rm = TRUE)
+
+## 3. filter heights dan hitung jumlah elemennya dimana heights > 70
+#jawab
+filtered_heights <- heights[heights > 70]
+length(filtered_heights)
+
+
+
+#dataframe
+Data_Frame <- data.frame (
+  Training = c("Strength", "Stamina", "Other"),
+  Pulse = c(100, 150, 120),
+  Duration = c(60, 30, 45)
+)
+#print datafrane
+Data_Frame 
+
+#summary data
+summary(Data_Frame)
+
+#menambah baris data
+New_row_DF <- rbind(Data_Frame, 
+                    c("Strength", 110, 110))
+New_row_DF
+
+#menambah kolom data
+New_col_DF <- cbind(Data_Frame, 
+                    Steps = c(1000, 6000, 2000))
+New_col_DF
+
+#menghapus kolom dan baris
+Data_Frame_New <- Data_Frame[-c(1), -c(1)]
+Data_Frame_New
+
+#mengetahui dimensi data
+dim(Data_Frame)
+
+#akses data pada dataframe
+Data_Frame[1]
+
+Data_Frame[["Training"]]
+
+Data_Frame$Training
+
+#melihat struktur
+str(Data_Frame)
+
+#-- LATIHAN 3 ---
+#1. Buatlah data frame baru dengan nama "Exercise_DF" yang berisi informasi jenis latihan ("Push-up", "Running", "Yoga"), 
+#detak jantung (Pulse), dan durasi latihan (Duration).
+#jawab
+Exercise_DF <- data.frame (
+  Training = c("Push-up", "Running", "Yoga"),
+  Pulse = c(110, 140, 130),
+  Duration = c(70, 40, 50)
+)
+
+Exercise_DF
+
+#2. Tampilkan ringkasan (summary) dari data frame "Exercise_DF".
+#jawab 
+print(str(Exercise_DF))
+print(summary(Exercise_DF))
+
+#3. Tambahkan baris baru ke dalam data frame "Exercise_DF" dengan informasi latihan "Cycling", detak jantung 130, dan durasi 40 menit.
+#jawab
+Exercise_DF <- data.frame (
+  Training = c("Push-up", "Running", "Yoga","Cycling"),
+  Pulse = c(110, 140, 130, 130),
+  Duration = c(70, 40, 50, 40)
+)
+
+Exercise_DF
+
+
+#4. Tambahkan kolom baru ke dalam data frame "Exercise_DF" yang menunjukkan level latihan ("Low", "Medium", "High") berdasarkan aturan:
+    #Low: Pulse < 120
+    #Medium: 120 <= Pulse < 140
+    #High: Pulse >= 140
+#jawab
+Exercise_DF$Intensity <- c("Low", "High", "Medium", "Medium")
+Exercise_DF
+
+\
+#---If...Else----
+
+#if
+a <- 33
+b <- 200
+
+if (b > a) {
+  print("b lebih besar dari a")
+}
+
+
+#Else if
+a <- 33
+b <- 33
+
+if (b > a) {
+  print("b lebih besar dari a")
+} else if (a == b) {
+  print ("a sama dengan b")
+}
+
+
+#Else
+a <- 200
+b <- 33
+
+if (b > a) {
+  print("b lebih besar dari a")
+} else if (a == b) {
+  print("a sama dengan b")
+} else {
+  print("a lebih besar dari b")
+}
+
+#--- LATIHAN 4 ---
+# 1 Buatlah sebuah variabel yang menyimpan usia seseorang.
+#Gunakan pernyataan kondisional untuk menentukan 
+#kategori usia: "Anak-anak," "Remaja," atau "Dewasa" berdasarkan nilai usia.
+#jawab
+usia <- 25
+kategori <- if (usia < 13) {
+  "Anak-anak"
+} else if (usia < 20) {
+  "Remaja"
+} else {
+  "Dewasa"
+}
+
+
+
+# 2 Buatlah variabel yang menyimpan nilai mahasiswa (0-100).
+#Gunakan pernyataan kondisional untuk mengonversi nilai numerik menjadi 
+#nilai huruf: "A," "B," "C," "D," atau "E."
+#jawab
+
+nilai <- 85
+grade <- if (nilai >= 90) {
+  "A"
+} else if (nilai >= 80) {
+  "B"
+} else if (nilai >= 70) {
+  "C"
+} else if (nilai >= 60) {
+  "D"
+} else {
+  "E"
+}
+
+
+# 3 Buatlah variabel yang menyimpan total belanjaan.
+#Gunakan pernyataan kondisional untuk menghitung diskon 
+#berdasarkan total belanjaan: 10% diskon jika total lebih dari 500.000, 
+#dan 5% diskon jika total lebih dari 200.000.
+#jawab
+
+total_belanjaan <- 600000
+diskon <- if (total_belanjaan > 500000) {
+  total_belanjaan * 0.1
+} else if (total_belanjaan > 200000) {
+  total_belanjaan * 0.05
+} else {
+  0
+}
+
+# 4 Buatlah variabel yang menyimpan berat badan dan tinggi badan seseorang.
+#Gunakan pernyataan kondisional untuk menentukan status kesehatan
+#berdasarkan Body Mass Index (BMI): "Kurus," "Normal," "Gemuk," atau "Obesitas."
+#jawab
+
+berat_badan <- 70
+tinggi_badan <- 1.75
+bmi <- berat_badan / (tinggi_badan^2)
+status <- if (bmi < 18.5) {
+  "Kurus"
+} else if (bmi < 24.9) {
+  "Normal"
+} else if (bmi < 29.9) {
+  "Gemuk"
+} else {
+  "Obesitas"
+}
+
+
+#---Perulangan----
+
+#for loop
+for (x in 1:10) {
+  print(x)
+}
+
+
+#while loop
+i <- 1
+while (i < 6) {
+  print(i)
+  i <- i + 1
+}
+
+#--- LATIHAN 5 ---
+#1. Gunakan loop untuk mencetak semua angka ganjil dari 1 hingga 10.
+#jawab
+
+for (i in 1:10) {
+  if (i %% 2 != 0) {
+    print(i)
+  }
+}
+
+#2. Gunakan loop untuk menghitung faktorial dari suatu bilangan.
+#faktorial 5 = 5*4*3*2*1
+#jawab
+
+hasil <- 1
+for (i in 1:5) {
+  hasil <- hasil * i
+}
+print(hasil)
+
+#3. Gunakan loop untuk mengklasifikasikan angka 1 hingga 10 
+#sebagai "Ganjil" atau "Genap."
+#jawab
+
+for (i in 1:10) {
+  if (i %% 2 == 0) {
+    print(paste(i, "Genap"))
+  } else {
+    print(paste(i, "Ganjil"))
+  }
+}
+
