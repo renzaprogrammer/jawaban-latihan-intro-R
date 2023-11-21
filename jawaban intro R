@@ -352,7 +352,7 @@ median(heights, na.rm = TRUE)
 
 ## 3. filter heights dan hitung jumlah elemennya dimana heights > 70
 #jawab
-filtered_heights <- heights[heights > 70]
+filtered_heights <- heights[heights > 70 & heights[!is.na(heights)]]
 length(filtered_heights)
 
 
